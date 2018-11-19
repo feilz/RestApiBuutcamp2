@@ -1,6 +1,8 @@
 package com.feilz.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -24,6 +26,18 @@ public class Post {
 
     @Column(name="text")
     private String post;
+
+    @Column(name="key")
+    @JsonIgnore
+    private String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public long getId() {
         return id;
