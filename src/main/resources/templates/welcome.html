@@ -6,7 +6,71 @@
 </head>
 <body>
     <div>
-        quick info about this buutcamp api
+        <div>
+            <h3>This is a simple API to support a small blog application</h3>
+            <p>It has all of the CRUD - methods available, and differentiates between different applications
+            based on a key, given as a request parameter. You are free to choose whatever key you want.
+                If you happen to select the same key as someone else, then you will share data.
+                Below all available methods are listed, as well as sample data returned</p>
+            <p>You can add posts, and comments to the posts</p>
+        </div>
+        <h4>Available methods:</h4>
+        <p>
+            <h5>Post methods</h5>
+            <ul>
+                <li>
+                    <b>GET:</b>
+                    /api/posts?key=''
+                </li>
+                    <p>Returns all posts created by your key</p>
+                <li><b>GET:</b> /api/posts/{:id}?key=''</li>
+                    <p>Returns a single post</p>
+                <li><b>POST:</b> /api/posts?key=''</li>
+                    <p>Create a new post, and assigns your key to it</p>
+                <li><b>PUT:</b> /api/posts?key=''</li>
+                    <p>Modifies an existing post</p>
+                <li><b>DELETE:</b> /api/posts/{:id}?key=''</li>
+                    <p>Deletes a post based on the id</p>
+            </ul>
+            <h5>Comment methods</h5>
+        <ul>
+            <li>
+                <b>GET:</b> /api/posts/{:postId}/comments/
+                <p>Get all comments for a single post</p>
+            </li>
+            <li>
+                <b>GET:</b> /api/posts/{:postId}/comments/{:commentId}
+                <p>Get a single comment for a post</p>
+            </li>
+            <li>
+                <b>POST:</b> /api/posts/{:postId}/comments/
+                <p>Create a new comment for a post</p>
+            </li>
+            <li>
+                <b>PUT:</b> /api/posts/{postId}/comments/
+                <p>Modify a comment for a post</p>
+            </li>
+            <li>
+                <b>DELETE:</b> /api/posts/{postId}/comments/{:commentId}
+                <p>delete a comment from a post</p>
+            </li>
+        </ul>
+        </p>
+        <p>
+            When making calls to this api, you will get data in the following JSON format:
+            <h4>Post format when making a new Post: </h4>
+            <div>{
+                "title": "SampleTitle",
+                "post": "SamplePost, that is very cool"
+            }</div>
+            <h4>Comment format when making a new comment: </h4>
+            <div>
+                {
+                    "text": "MyAwesomeComment"
+                }
+            </div>
+            <h4>Sample get request: </h4>
+        </p>
     </div>
 </body>
 </html>
