@@ -56,7 +56,7 @@
             </li>
         </ul>
         </p>
-        <p>
+        <div>
             When making calls to this api, you will get data in the following JSON format:
             <h4>Post format when making a new Post: </h4>
             <div>{
@@ -65,12 +65,30 @@
             }</div>
             <h4>Comment format when making a new comment: </h4>
             <div>
-                {
-                    "text": "MyAwesomeComment"
+                {<br>
+                    "text": "MyAwesomeComment"<br>
                 }
             </div>
             <h4>Sample get request: </h4>
-        </p>
+            <p>
+                [
+                    {
+                        "createdAt": "2018-11-20T10:04:20.743+0000",
+                        "updatedAt": "2018-11-20T10:04:20.743+0000",
+                        "id": 100,
+                        "title": "SampleTitle",
+                        "post": "SamplePost"
+                    },
+                    {
+                        "createdAt": "2018-11-20T10:05:34.783+0000",
+                        "updatedAt": "2018-11-20T10:05:34.783+0000",
+                        "id": 101,
+                        "title": "hello",
+                        "post": "hello World"
+                    }
+                ]
+            </p>
+        </div>
     </div>
 </body>
 </html>
