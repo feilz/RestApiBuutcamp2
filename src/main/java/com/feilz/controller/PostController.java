@@ -20,10 +20,6 @@ public class PostController {
     @Autowired
     private PostRepository postRepository;
 
-    @GetMapping("/")
-    private String getFirst() {
-        return "Hello world!";
-    }
 
     @GetMapping("/posts")
     public List<Post> getPosts(@RequestParam("key") String key) {
