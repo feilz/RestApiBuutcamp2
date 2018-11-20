@@ -22,13 +22,14 @@ public class CommentController {
     private PostRepository postRepository;
 
     @GetMapping("/{postId}/comments")
-    public List<Comment> getCommentsByQuestionId(@PathVariable Long postId) {
+    public List<Comment> getCommentsByPostId(@PathVariable Long postId) {
         return commentRepository.findByPostId(postId);
     }
 
     @PostMapping("/{postId}/comments")
     public Comment addComment(@PathVariable Long postId,
-                              @Valid @RequestBody Comment comment) {
+                              @Valid @RequestBody Comment comment,
+                              @RequestParam("key") String key ) {
         return postRepository.findById(postId)
                 .map(post -> {
                     comment.setPost(post);

@@ -7,51 +7,51 @@
 <body>
     <div>
         <div>
-            <h3>This is a simple API to support a small blog application</h3>
+            <h2>This is a simple API to support a small blog application</h2>
             <p>It has all of the CRUD - methods available, and differentiates between different applications
             based on a key, given as a request parameter. You are free to choose whatever key you want.
                 If you happen to select the same key as someone else, then you will share data.
                 Below all available methods are listed, as well as sample data returned</p>
             <p>You can add posts, and comments to the posts</p>
         </div>
-        <h4>Available methods:</h4>
+        <h3>Available methods:</h3>
         <p>
-            <h5>Post methods</h5>
+            <h4>Post methods</h4>
             <ul>
                 <li>
                     <b>GET:</b>
                     /api/posts?key=''
                 </li>
                     <p>Returns all posts created by your key</p>
-                <li><b>GET:</b> /api/posts/{:id}?key=''</li>
+                <li><b>GET:</b> /api/posts/{:id}?key='\< myKey\>'</li>
                     <p>Returns a single post</p>
-                <li><b>POST:</b> /api/posts?key=''</li>
+                <li><b>POST:</b> /api/posts?key='\< myKey\>'</li>
                     <p>Create a new post, and assigns your key to it</p>
-                <li><b>PUT:</b> /api/posts?key=''</li>
+                <li><b>PUT:</b> /api/posts?key='\< myKey\>'</li>
                     <p>Modifies an existing post</p>
-                <li><b>DELETE:</b> /api/posts/{:id}?key=''</li>
+                <li><b>DELETE:</b> /api/posts/{:id}?key='\< myKey\>'</li>
                     <p>Deletes a post based on the id</p>
             </ul>
-            <h5>Comment methods</h5>
+            <h4>Comment methods</h4>
         <ul>
             <li>
-                <b>GET:</b> /api/posts/{:postId}/comments/
+                <b>GET:</b> /api/posts/{:postId}/comments?key='\< myKey\>'
                 <p>Get all comments for a single post</p>
             </li>
             <li>
-                <b>GET:</b> /api/posts/{:postId}/comments/{:commentId}
+                <b>GET:</b> /api/posts/{:postId}/comments/{:commentId}?key='\< myKey\>'
                 <p>Get a single comment for a post</p>
             </li>
             <li>
-                <b>POST:</b> /api/posts/{:postId}/comments/
+                <b>POST:</b> /api/posts/{:postId}/comments?key='\< myKey\>'
                 <p>Create a new comment for a post</p>
             </li>
             <li>
-                <b>PUT:</b> /api/posts/{postId}/comments/
+                <b>PUT:</b> /api/posts/{postId}/comments?'key='\< myKey\>'
                 <p>Modify a comment for a post</p>
             </li>
             <li>
-                <b>DELETE:</b> /api/posts/{postId}/comments/{:commentId}
+                <b>DELETE:</b> /api/posts/{postId}/comments/{:commentId}?key='\< myKey\>'
                 <p>delete a comment from a post</p>
             </li>
         </ul>
@@ -59,33 +59,33 @@
         <div>
             When making calls to this api, you will get data in the following JSON format:
             <h4>Post format when making a new Post: </h4>
-            <div>{
-                "title": "SampleTitle",
-                "post": "SamplePost, that is very cool"
+            <div>{<br/>
+                "title": "SampleTitle",<br/>
+                "post": "SamplePost, that is very cool"<br/>
             }</div>
             <h4>Comment format when making a new comment: </h4>
             <div>
-                {<br>
-                    "text": "MyAwesomeComment"<br>
+                {<br/>
+                    "text": "MyAwesomeComment"<br/>
                 }
             </div>
             <h4>Sample get request: </h4>
             <p>
-                [
-                    {
-                        "createdAt": "2018-11-20T10:04:20.743+0000",
-                        "updatedAt": "2018-11-20T10:04:20.743+0000",
-                        "id": 100,
-                        "title": "SampleTitle",
-                        "post": "SamplePost"
-                    },
-                    {
-                        "createdAt": "2018-11-20T10:05:34.783+0000",
-                        "updatedAt": "2018-11-20T10:05:34.783+0000",
-                        "id": 101,
-                        "title": "hello",
-                        "post": "hello World"
-                    }
+                [<br/>
+                    {<br/>
+                        "createdAt": "2018-11-20T10:04:20.743+0000",<br/>
+                        "updatedAt": "2018-11-20T10:04:20.743+0000",<br/>
+                        "id": 100,<br/>
+                        "title": "SampleTitle",<br/>
+                        "post": "SamplePost"<br/>
+                    },<br/>
+                    {<br/>
+                        "createdAt": "2018-11-20T10:05:34.783+0000",<br/>
+                        "updatedAt": "2018-11-20T10:05:34.783+0000",<br/>
+                        "id": 101,<br/>
+                        "title": "hello",<br/>
+                        "post": "hello World"<br/>
+                    }<br/>
                 ]
             </p>
         </div>
